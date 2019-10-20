@@ -46,7 +46,6 @@ class ViewController: UIViewController {
             underscoreLbl.text = String(format: "%@", sender.text!)
             sender.resignFirstResponder()
         }
-    
     }
     
     // MARK: - VC Lifecycle
