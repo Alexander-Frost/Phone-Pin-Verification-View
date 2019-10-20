@@ -15,7 +15,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _ _" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-X8-ZyX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIe-X8-ZyX">
+                                <rect key="frame" x="67" y="441" width="280" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="RIs-Fh-Tyt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="57"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ _ _ _ _ _" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mm-4E-22x">
                                 <rect key="frame" x="67" y="418" width="280" height="70"/>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="57"/>
                                 <nil key="textColor"/>
@@ -39,16 +48,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hLZ-RE-ndc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="4" id="JSM-nl-SuQ"/>
-                            <constraint firstItem="dIe-X8-ZyX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="QwJ-c8-I2Q"/>
+                            <constraint firstItem="dIe-X8-ZyX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-12" id="QwJ-c8-I2Q"/>
+                            <constraint firstItem="8mm-4E-22x" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YMp-LA-mMS"/>
+                            <constraint firstItem="8mm-4E-22x" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="c36-fv-2EA"/>
                             <constraint firstItem="dIe-X8-ZyX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="d3x-Jt-dZ2"/>
+                            <constraint firstItem="dIe-X8-ZyX" firstAttribute="width" secondItem="8mm-4E-22x" secondAttribute="width" id="fiq-Lq-UOX"/>
+                            <constraint firstItem="8mm-4E-22x" firstAttribute="width" secondItem="hLZ-RE-ndc" secondAttribute="width" id="lrg-fX-xL6"/>
                             <constraint firstItem="hLZ-RE-ndc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xAy-wj-DKw"/>
-                            <constraint firstItem="dIe-X8-ZyX" firstAttribute="width" secondItem="hLZ-RE-ndc" secondAttribute="width" id="xC4-B6-IgX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="entryLbl" destination="dIe-X8-ZyX" id="8TU-16-Au5"/>
                         <outlet property="textField" destination="hLZ-RE-ndc" id="Yab-aP-u7N"/>
-                        <outlet property="underscoreLbl" destination="dIe-X8-ZyX" id="4d2-cZ-8N6"/>
+                        <outlet property="underscoreLbl" destination="8mm-4E-22x" id="CiJ-lh-bqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -14,36 +14,38 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var underscoreLbl: UILabel!
+    @IBOutlet weak var entryLbl: UILabel!
     
     // MARK: - Actions
     
     @IBAction func editingDidChange(_ sender: UITextField) {
         if(sender.text?.count == 0){
-            underscoreLbl.text = String(format: "%@_ _ _ _ _ _", sender.text! + " ")
+            entryLbl.text = sender.text! + " "
         }
 
         if(sender.text?.count == 1){
-            underscoreLbl.text = String(format: "%@_ _ _ _ _", sender.text! + " ")
+            entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 2){
-            underscoreLbl.text = String(format: "%@_ _ _ _", sender.text! + " ")
+            entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 3){
-            underscoreLbl.text = String(format: "%@_ _ _", sender.text! + " ")
+            entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 4){
-            underscoreLbl.text = String(format: "%@_ _", sender.text! + " ")
+            entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 5){
-            underscoreLbl.text = String(format: "%@_", sender.text! + " ")
+            entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 6){
-            underscoreLbl.text = String(format: "%@", sender.text!)
+            entryLbl.text = stringSpace(text: sender.text!)
+
             sender.resignFirstResponder()
         }
     }
@@ -59,5 +61,27 @@ class ViewController: UIViewController {
         textField.borderStyle = .none
     }
 
+    // MARK: - Methods
+    
+    private func stringSpace(text: String) -> String {
+        return text.inserting(separator: " ", every: 1)
+    }
 }
+
+
+extension StringProtocol where Self: RangeReplaceableCollection {
+    mutating func insert(separator: Self, every n: Int) {
+        for index in indices.reversed() where index != startIndex &&
+            distance(from: startIndex, to: index) % n == 0 {
+            insert(contentsOf: separator, at: index)
+        }
+    }
+
+    func inserting(separator: Self, every n: Int) -> Self {
+        var string = self
+        string.insert(separator: separator, every: n)
+        return string
+    }
+}
+
 
