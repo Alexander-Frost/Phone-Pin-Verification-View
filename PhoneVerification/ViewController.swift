@@ -19,33 +19,12 @@ class ViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func editingDidChange(_ sender: UITextField) {
-        if(sender.text?.count == 0){
-            entryLbl.text = sender.text! + " "
-        }
-
-        if(sender.text?.count == 1){
-            entryLbl.text = stringSpace(text: sender.text!)
-        }
-
-        if(sender.text?.count == 2){
-            entryLbl.text = stringSpace(text: sender.text!)
-        }
-
-        if(sender.text?.count == 3){
-            entryLbl.text = stringSpace(text: sender.text!)
-        }
-
-        if(sender.text?.count == 4){
-            entryLbl.text = stringSpace(text: sender.text!)
-        }
-
-        if(sender.text?.count == 5){
+        if(sender.text!.count >= 0 && sender.text!.count <= 6){
             entryLbl.text = stringSpace(text: sender.text!)
         }
 
         if(sender.text?.count == 6){
             entryLbl.text = stringSpace(text: sender.text!)
-
             sender.resignFirstResponder()
         }
     }
